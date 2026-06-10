@@ -30,3 +30,6 @@ Thumbs.db
 # Firebase
 firebase-debug.log
 cover-options/
+
+# Scout posture scans — session artefacts, regenerable
+scout-out/
