@@ -104,3 +104,11 @@ Do NOT set version in `marketplace.json` -- it conflicts with `plugin.json` (plu
 - Test locally with `claude --plugin-dir .` (loads plugin without installing).
 - After changes, run `/reload-plugins` in Claude Code to pick up updates without restarting.
 - Validate with `claude plugin validate .` or `/plugin validate .` before releasing.
+
+## Port registry
+
+Every host port used anywhere under `/Users/adam/Projects` — **including this project's** — is recorded in one complete source of truth: [`/Users/adam/Projects/PORTS.md`](/Users/adam/Projects/PORTS.md).
+
+- **Need a port (new or changed)?** Open `PORTS.md`, find this project's reserved range in the legend, and take the lowest unused port in that range.
+- **After** adding/changing/removing any port binding (`docker-compose ports:`, `restart.sh`, dev `--port`): add/update the row in `PORTS.md` **in the same commit**.
+- **Validate:** `python3 /Users/adam/Projects/scripts/check-ports.py` (errors on unregistered ports and collisions).
